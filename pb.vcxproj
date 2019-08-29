@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pb\pb.c" />
+    <ClCompile Include="pb.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pb\pb.h" />
+    <None Include="pb.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pb.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -110,7 +113,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>.\pb\;..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
@@ -126,9 +129,12 @@
       <AdditionalLibraryDirectories>$(SolutionDir)/Libs/$(Platform)/$(Configuration);$(SolutionDir)/Libs/$(Platform)/;%(AdditionalLibraryDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>pb.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent />
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(SolutionDir)execute\$(Platform)\$(Configuration)\ibs goto 1
+mkdir $(SolutionDir)execute\$(Platform)\$(Configuration)\libs
+:1
+copy $(ProjectDir)protoc.lua $(SolutionDir)execute\$(Platform)\$(Configuration)\libs\protoc.lua</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -143,7 +149,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>.\pb\;..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
@@ -158,9 +164,12 @@
       <AdditionalDependencies>lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>pb.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent />
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(SolutionDir)execute\$(Platform)\$(Configuration)\ibs goto 1
+mkdir $(SolutionDir)execute\$(Platform)\$(Configuration)\libs
+:1
+copy $(ProjectDir)protoc.lua $(SolutionDir)execute\$(Platform)\$(Configuration)\libs\protoc.lua</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -177,7 +186,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>.\pb\;..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>4127;4244;4706;4996</DisableSpecificWarnings>
       <PrecompiledHeaderOutputFile />
@@ -194,9 +203,12 @@
       <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
       <ModuleDefinitionFile>pb.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent />
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(SolutionDir)execute\$(Platform)\$(Configuration)\ibs goto 1
+mkdir $(SolutionDir)execute\$(Platform)\$(Configuration)\libs
+:1
+copy $(ProjectDir)protoc.lua $(SolutionDir)execute\$(Platform)\$(Configuration)\libs\protoc.lua</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -213,7 +225,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>.\pb\;..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
@@ -231,9 +243,12 @@
       <AdditionalOptions>/LTCG %(AdditionalOptions)</AdditionalOptions>
       <ModuleDefinitionFile>pb.def</ModuleDefinitionFile>
     </Link>
+    <PostBuildEvent />
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(SolutionDir)execute\$(Platform)\$(Configuration)\ibs goto 1
+mkdir $(SolutionDir)execute\$(Platform)\$(Configuration)\libs
+:1
+copy $(ProjectDir)protoc.lua $(SolutionDir)execute\$(Platform)\$(Configuration)\libs\protoc.lua</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
