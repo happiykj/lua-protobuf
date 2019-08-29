@@ -572,7 +572,8 @@ LUALIB_API int luaopen_pb_io(lua_State *L) {
 #undef  ENTRY
         { NULL, NULL }
     };
-    luaL_newlib(L, libs);
+    lua_newtable(L);
+    luaL_setfuncs(L, libs, 0);
     return 1;
 }
 
@@ -656,7 +657,8 @@ LUALIB_API int luaopen_pb_conv(lua_State *L) {
 #undef  ENTRY
         { NULL, NULL }
     };
-    luaL_newlib(L, libs);
+    lua_newtable(L);
+    luaL_setfuncs(L, libs, 0);
     return 1;
 }
 
@@ -1825,7 +1827,8 @@ LUALIB_API int luaopen_pb(lua_State *L) {
         lua_setfield(L, -2, "__index");
     }
     lua_pop(L, 1);
-    luaL_newlib(L, libs);
+    lua_newtable(L);
+    luaL_setfuncs(L, libs, 0);
     return 1;
 }
 
@@ -1841,7 +1844,8 @@ LUALIB_API int luaopen_pb_unsafe(lua_State *L) {
         { "decode", Lpb_decode_unsafe },
         { NULL, NULL }
     };
-    luaL_newlib(L, libs);
+    lua_newtable(L);
+    luaL_setfuncs(L, libs, 0);
     return 1;
 }
 
