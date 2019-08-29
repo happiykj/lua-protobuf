@@ -150,8 +150,7 @@ copy $(ProjectDir)protoc.lua $(SolutionDir)execute\$(Platform)\$(Configuration)\
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
+      <DisableSpecificWarnings>4127;4244;4706;4996</DisableSpecificWarnings>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -227,8 +226,7 @@ copy $(ProjectDir)protoc.lua $(SolutionDir)execute\$(Platform)\$(Configuration)\
       </PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>..\lua\lua\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
+      <DisableSpecificWarnings>4127;4244;4706;4996</DisableSpecificWarnings>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
